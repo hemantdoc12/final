@@ -1,104 +1,90 @@
-/* styles.css */
-
-/* Reset default styles */
+/* Mobile-First Base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
     background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100dvh;
     overflow-x: hidden;
+    font-size: 16px;
 }
 
 /* Header */
 .header {
     display: flex;
-    justify-content: flex-end;
-    padding: 15px 30px;
-    font-size: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 10px;
     background-color: #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 1000;
 }
 
 .header a {
-    margin-left: 15px;
     color: #ffffff;
     text-decoration: none;
     background: linear-gradient(135deg, #728539 0%, #34a853 100%);
-    padding: 8px 16px;
+    padding: 6px 10px;
     border-radius: 20px;
-    border: none;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    min-width: 80px;
+    font-size: 12px;
+    min-width: 48px;
     text-align: center;
-    line-height: 1.5;
 }
 
-.header a:hover {
+.header a:hover, .header a:active {
     background: linear-gradient(135deg, #34a853 0%, #728539 100%);
-    -webkit-transform: translateY(-2px);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Main content */
+/* Main */
 .main {
-    flex: 1;
+    padding: 20px 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 40px;
-    height: calc(100vh - 60px);
-    box-sizing: border-box;
-    position: relative;
+    gap: 20px;
+    flex: 1;
 }
 
 /* Logo */
 .finanvo-logo {
-    background: url('finanvo-logo.png') no-repeat center;
-    background-size: contain;
-    height: 120px;
-    width: 350px;
-    position: absolute;
-    top: 30%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+    height: 60px;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.finanvo-logo picture, .finanvo-logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 /* Search Bar */
 .search-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
+    width: 90vw;
+    max-width: 490px; /* Adjusted as per your preference */
     border: 1px solid #dfe1e5;
     border-radius: 25px;
-    padding: 8px 15px;
+    padding: 8px 30px 8px 16px;
     box-shadow: 0 2px 10px rgba(32, 33, 36, 0.1);
-    -webkit-transition: box-shadow 0.2s ease;
     transition: box-shadow 0.2s ease;
-    position: absolute;
-    top: 43%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background-color: #ffffff;
     z-index: 500;
 }
@@ -111,38 +97,37 @@ body {
     flex: 1;
     border: none;
     outline: none;
-    font-size: 16px;
-    padding: 10px;
+    font-size: clamp(14px, 3vw, 16px);
+    padding: 8px 12px;
     color: #333333;
+    background-color: transparent;
 }
 
 /* Dropdown */
 .dropdown {
     position: relative;
-    margin-right: 10px;
-    z-index: 600;
+    width: 30%; /* Reduced to allow tighter fit */
+    min-width: 100px; /* Reduced to fit content more closely, still touch-friendly */
 }
 
 .dropdown button {
     background: linear-gradient(135deg, #728539 0%, #34a853 100%);
     border: none;
     border-radius: 20px;
-    padding: 8px 16px;
-    font-size: 14px;
+    padding: 8px 8px 8px 12px; /* Reduced right padding to minimize space after symbol */
+    font-size: clamp(12px, 2.5vw, 16px);
     color: #ffffff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    min-width: 100px;
-    text-align: center;
-    line-height: 1.5;
+    width: 100%;
+    text-align: left;
+    white-space: nowrap;
 }
 
-.dropdown button:hover {
+.dropdown button:hover, .dropdown button:active {
     background: linear-gradient(135deg, #34a853 0%, #728539 100%);
-    -webkit-transform: translateY(-2px);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -155,7 +140,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 700;
     margin-top: 5px;
-    min-width: 160px;
+    min-width: 100%;
+    top: 100%;
 }
 
 .dropdown-content a {
@@ -163,8 +149,7 @@ body {
     padding: 10px 16px;
     text-decoration: none;
     display: block;
-    font-size: 14px;
-    -webkit-transition: background-color 0.3s ease;
+    font-size: clamp(12px, 2.5vw, 14px);
     transition: background-color 0.3s ease;
 }
 
@@ -182,72 +167,66 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 18px;
+    font-size: clamp(16px, 3vw, 18px);
     color: #333333;
-    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    padding: 10px;
+    padding: 8px 0;
+    margin-right: -12px;
+    min-width: 48px;
+    text-align: center;
 }
 
 .search-icon::before {
     content: "\1F50D";
 }
 
-.search-icon:hover {
+.search-icon:hover, .search-icon:active {
     color: #728539;
-    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
-/* Ticker Container */
+/* Ticker */
 .ticker-container {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 100%;
-    max-width: 500px;
+    width: 90vw;
+    max-width: 400px;
     text-align: center;
     z-index: 400;
+    margin-top: 20px;
 }
 
 .ticker-wrapper {
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    background-color: #f1f3f4;
+    gap: 8px;
+    background: linear-gradient(135deg, #d1d5db 0%, #b0b7c0 100%);
     border-radius: 15px;
-    padding: 4px 8px;
-    max-width: 300px;
+    padding: 6px 10px;
+    width: 100%;
 }
 
 .ticker-static {
     color: #333333;
     font-size: 16px;
     font-weight: 500;
-    margin-right: 0.5em;
+    white-space: nowrap;
 }
 
 .ticker {
-    display: inline-block;
-    width: 150px;
+    flex: 1;
     height: 25px;
     overflow: hidden;
     position: relative;
-    text-align: left;
 }
 
 .ticker-content {
-    position: absolute;
-    width: 100%;
-    will-change: transform;
-    -webkit-animation: ticker 20s infinite linear;
+    display: flex;
+    flex-direction: column;
     animation: ticker 20s infinite linear;
+    will-change: transform;
 }
 
 .ticker-item {
-    display: block;
-    padding: 0;
-    margin: 0;
     color: #728539;
     font-size: 16px;
     font-weight: 500;
@@ -256,506 +235,178 @@ body {
     white-space: nowrap;
 }
 
-@-webkit-keyframes ticker {
-    0% { transform: translateY(0); }
-    10% { transform: translateY(0); }
-    12% { transform: translateY(-25px); }
-    22% { transform: translateY(-25px); }
-    24% { transform: translateY(-50px); }
-    34% { transform: translateY(-50px); }
-    36% { transform: translateY(-75px); }
-    46% { transform: translateY(-75px); }
-    48% { transform: translateY(-100px); }
-    58% { transform: translateY(-100px); }
-    60% { transform: translateY(-125px); }
-    70% { transform: translateY(-125px); }
-    72% { transform: translateY(-150px); }
-    82% { transform: translateY(-150px); }
-    84% { transform: translateY(-175px); }
-    94% { transform: translateY(-175px); }
-    96% { transform: translateY(-200px); }
-    100% { transform: translateY(-200px); }
-}
-
 @keyframes ticker {
     0% { transform: translateY(0); }
-    10% { transform: translateY(0); }
-    12% { transform: translateY(-25px); }
-    22% { transform: translateY(-25px); }
-    24% { transform: translateY(-50px); }
-    34% { transform: translateY(-50px); }
-    36% { transform: translateY(-75px); }
-    46% { transform: translateY(-75px); }
+    8% { transform: translateY(0); }
+    10% { transform: translateY(-25px); }
+    18% { transform: translateY(-25px); }
+    20% { transform: translateY(-50px); }
+    28% { transform: translateY(-50px); }
+    30% { transform: translateY(-75px); }
+    38% { transform: translateY(-75px); }
+    40% { transform: translateY(-100px); }
     48% { transform: translateY(-100px); }
-    58% { transform: translateY(-100px); }
-    60% { transform: translateY(-125px); }
-    70% { transform: translateY(-125px); }
-    72% { transform: translateY(-150px); }
-    82% { transform: translateY(-150px); }
-    84% { transform: translateY(-175px); }
-    94% { transform: translateY(-175px); }
-    96% { transform: translateY(-200px); }
-    100% { transform: translateY(-200px); }
+    50% { transform: translateY(-125px); }
+    58% { transform: translateY(-125px); }
+    60% { transform: translateY(-150px); }
+    68% { transform: translateY(-150px); }
+    70% { transform: translateY(-175px); }
+    78% { transform: translateY(-175px); }
+    80% { transform: translateY(-200px); }
+    88% { transform: translateY(-200px); }
+    90% { transform: translateY(-225px); }
+    98% { transform: translateY(-225px); }
+    100% { transform: translateY(-250px); }
 }
 
 /* Footer */
 .footer {
     background-color: #ffffff;
-    padding: 10px 30px;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 12px;
     color: #70757a;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    position: fixed;
+    position: sticky;
     bottom: 0;
-    left: 0;
-    right: 0;
-    white-space: nowrap;
+    z-index: 1000;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
 }
 
 .footer a {
     color: #70757a;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 .footer a:hover {
     text-decoration: underline;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: none;
-    margin: 0 auto;
-}
-
-.footer-content span {
-    margin-right: 20px;
-}
-
-.footer-content .sales,
-.footer-content .support,
-.footer-content .privacy {
-    flex: 1;
-    text-align: center;
-}
-
-.footer-content .sales {
-    text-align: left;
-}
-
-.footer-content .support {
-    margin-right: 0;
-}
-
-.footer-content .privacy {
-    text-align: right;
-}
-
-/* Responsive Design: Tablets (max-width: 768px) */
-@media (max-width: 768px) {
+/* Desktop Enhancements */
+@media (min-width: 768px) {
     .header {
-        padding: 10px 20px;
-        font-size: 12px;
+        padding: 15px 30px;
+        justify-content: flex-end;
+        gap: 15px;
     }
-
     .header a {
-        padding: 8px 12px;
-        min-width: 90px;
-        font-size: 12px;
+        padding: 8px 16px;
+        font-size: 14px;
     }
-
     .main {
-        padding: 20px;
-        height: calc(100vh - 50px);
+        padding: 40px;
+        height: calc(100dvh - 60px);
+        justify-content: center;
+        gap: 0;
     }
-
     .finanvo-logo {
-        height: 80px;
-        width: 250px;
-        top: 30%; /* Adjusted for better spacing */
+        height: 120px;
+        width: 350px;
+        position: absolute;
+        top: 30%;
+        transform: translateY(-50%);
+        margin: 0;
     }
-
     .search-container {
-        max-width: 90%;
-        padding: 6px 10px;
-        top: 35%; /* Adjusted for better spacing */
+        width: 460px; /* Kept as per your adjustment */
+        padding: 8px 40px 8px 20px;
+        position: absolute;
+        top: 43%;
+        transform: translateY(-50%);
     }
-
-    .search-container input {
-        font-size: 14px;
-        padding: 8px;
+    .dropdown {
+        width: auto;
+        min-width: 110px; /* Reduced to fit content */
+        margin-right: 10px;
     }
-
     .dropdown button {
-        padding: 8px 12px;
-        font-size: 12px;
-        min-width: 110px;
+        padding: 8px 10px 8px 16px; /* Adjusted for desktop */
+        font-size: 14px;
     }
-
-    .dropdown-content {
-        min-width: 140px;
+    .search-container input {
+        padding: 8px 16px;
     }
-
-    .dropdown-content a {
-        font-size: 12px;
-        padding: 8px 12px;
-    }
-
     .search-icon {
-        font-size: 16px;
-        padding: 12px;
+        padding: 0;
+        margin-right: -15px;
+        font-size: 18px;
     }
-
     .ticker-container {
-        max-width: 90%;
-        top: 55%; /* Adjusted for better spacing */
+        width: 500px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: 0;
     }
-
     .ticker-wrapper {
-        max-width: 250px;
-        padding: 3px 6px;
-    }
-
-    .ticker-static {
-        font-size: 14px;
-    }
-
-    .ticker {
-        width: 120px;
-        height: 20px;
-    }
-
-    .ticker-item {
-        font-size: 14px;
-        line-height: 20px;
-        height: 20px;
-    }
-
-    @-webkit-keyframes ticker {
-        0% { transform: translateY(0); }
-        10% { transform: translateY(0); }
-        12% { transform: translateY(-20px); }
-        22% { transform: translateY(-20px); }
-        24% { transform: translateY(-40px); }
-        34% { transform: translateY(-40px); }
-        36% { transform: translateY(-60px); }
-        46% { transform: translateY(-60px); }
-        48% { transform: translateY(-80px); }
-        58% { transform: translateY(-80px); }
-        60% { transform: translateY(-100px); }
-        70% { transform: translateY(-100px); }
-        72% { transform: translateY(-120px); }
-        82% { transform: translateY(-120px); }
-        84% { transform: translateY(-140px); }
-        94% { transform: translateY(-140px); }
-        96% { transform: translateY(-160px); }
-        100% { transform: translateY(-160px); }
-    }
-
-    @keyframes ticker {
-        0% { transform: translateY(0); }
-        10% { transform: translateY(0); }
-        12% { transform: translateY(-20px); }
-        22% { transform: translateY(-20px); }
-        24% { transform: translateY(-40px); }
-        34% { transform: translateY(-40px); }
-        36% { transform: translateY(-60px); }
-        46% { transform: translateY(-60px); }
-        48% { transform: translateY(-80px); }
-        58% { transform: translateY(-80px); }
-        60% { transform: translateY(-100px); }
-        70% { transform: translateY(-100px); }
-        72% { transform: translateY(-120px); }
-        82% { transform: translateY(-120px); }
-        84% { transform: translateY(-140px); }
-        94% { transform: translateY(-140px); }
-        96% { transform: translateY(-160px); }
-        100% { transform: translateY(-160px); }
-    }
-
-    .footer {
-        padding: 10px 20px;
-        font-size: 12px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
+        max-width: 300px;
         gap: 8px;
+        margin: 0 auto;
     }
-
-    .footer-content .sales,
-    .footer-content .support,
-    .footer-content .privacy {
-        text-align: left;
-        flex: none;
-    }
-}
-
-/* Responsive Design: Small Mobile Devices (max-width: 480px) */
-@media (max-width: 480px) {
-    .header {
-        padding: 8px 15px;
-        font-size: 10px;
-    }
-
-    .header a {
-        padding: 8px 12px;
-        min-width: 80px;
-        font-size: 11px;
-    }
-
-    .main {
-        padding: 15px;
-        height: calc(100vh - 40px);
-    }
-
-    .finanvo-logo {
-        height: 50px;
-        width: 180px;
-        top: 10%; /* Adjusted for better spacing */
-    }
-
-    .search-container {
-        max-width: 100%;
-        padding: 5px 8px;
-        top: 25%; /* Adjusted for better spacing */
-    }
-
-    .search-container input {
-        font-size: 12px;
-        padding: 6px;
-    }
-
-    .dropdown button {
-        padding: 8px 12px;
-        font-size: 11px;
-        min-width: 90px;
-    }
-
-    .dropdown-content {
-        min-width: 120px;
-    }
-
-    .dropdown-content a {
-        font-size: 11px;
-        padding: 6px 10px;
-    }
-
-    .search-icon {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .ticker-container {
-        max-width: 100%;
-        top: 40%; /* Adjusted for better spacing */
-    }
-
-    .ticker-wrapper {
-        max-width: 200px;
-        padding: 2px 5px;
-    }
-
     .ticker-static {
-        font-size: 13px;
+        font-size: 16px;
     }
-
     .ticker {
-        width: 100px;
-        height: 18px;
-    }
-
-    .ticker-item {
-        font-size: 13px;
-        line-height: 18px;
-        height: 18px;
-    }
-
-    @-webkit-keyframes ticker {
-        0% { transform: translateY(0); }
-        10% { transform: translateY(0); }
-        12% { transform: translateY(-18px); }
-        22% { transform: translateY(-18px); }
-        24% { transform: translateY(-36px); }
-        34% { transform: translateY(-36px); }
-        36% { transform: translateY(-54px); }
-        46% { transform: translateY(-54px); }
-        48% { transform: translateY(-72px); }
-        58% { transform: translateY(-72px); }
-        60% { transform: translateY(-90px); }
-        70% { transform: translateY(-90px); }
-        72% { transform: translateY(-108px); }
-        82% { transform: translateY(-108px); }
-        84% { transform: translateY(-126px); }
-        94% { transform: translateY(-126px); }
-        96% { transform: translateY(-144px); }
-        100% { transform: translateY(-144px); }
-    }
-
-    @keyframes ticker {
-        0% { transform: translateY(0); }
-        10% { transform: translateY(0); }
-        12% { transform: translateY(-18px); }
-        22% { transform: translateY(-18px); }
-        24% { transform: translateY(-36px); }
-        34% { transform: translateY(-36px); }
-        36% { transform: translateY(-54px); }
-        46% { transform: translateY(-54px); }
-        48% { transform: translateY(-72px); }
-        58% { transform: translateY(-72px); }
-        60% { transform: translateY(-90px); }
-        70% { transform: translateY(-90px); }
-        72% { transform: translateY(-108px); }
-        82% { transform: translateY(-108px); }
-        84% { transform: translateY(-126px); }
-        94% { transform: translateY(-126px); }
-        96% { transform: translateY(-144px); }
-        100% { transform: translateY(-144px); }
-    }
-
-    .footer {
-        padding: 8px 15px;
-        font-size: 11px;
-    }
-
-    .footer-content {
-        gap: 6px;
-    }
-}
-
-/* Extra Small Devices (max-width: 360px, e.g., iPhone 6s) */
-@media (max-width: 360px) {
-    .header {
-        padding: 6px 10px;
-    }
-
-    .header a {
-        padding: 6px 10px;
-        min-width: 70px;
-        font-size: 10px;
-    }
-
-    .main {
-        padding: 10px;
-        height: calc(100vh - 35px);
-    }
-
-    .finanvo-logo {
-        height: 40px;
         width: 150px;
-        top: 8%; /* Adjusted for better spacing */
+        height: 25px;
     }
-
-    .search-container {
-        padding: 4px 6px;
-        top: 20%; /* Adjusted for better spacing */
-    }
-
-    .search-container input {
-        font-size: 11px;
-        padding: 5px;
-    }
-
-    .dropdown button {
-        padding: 6px 10px;
-        font-size: 10px;
-        min-width: 80px;
-    }
-
-    .dropdown-content {
-        min-width: 110px;
-    }
-
-    .dropdown-content a {
-        font-size: 10px;
-        padding: 5px 8px;
-    }
-
-    .search-icon {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .ticker-container {
-        top: 35%; /* Adjusted for better spacing */
-    }
-
-    .ticker-wrapper {
-        max-width: 180px;
-        padding: 2px 4px;
-    }
-
-    .ticker-static {
-        font-size: 12px;
-    }
-
-    .ticker {
-        width: 90px;
-        height: 16px;
-    }
-
     .ticker-item {
-        font-size: 12px;
-        line-height: 16px;
-        height: 16px;
+        font-size: 16px;
+        line-height: 25px;
+        height: 25px;
     }
-
-    @-webkit-keyframes ticker {
-        0% { transform: translateY(0); }
-        10% { transform: translateY(0); }
-        12% { transform: translateY(-16px); }
-        22% { transform: translateY(-16px); }
-        24% { transform: translateY(-32px); }
-        34% { transform: translateY(-32px); }
-        36% { transform: translateY(-48px); }
-        46% { transform: translateY(-48px); }
-        48% { transform: translateY(-64px); }
-        58% { transform: translateY(-64px); }
-        60% { transform: translateY(-80px); }
-        70% { transform: translateY(-80px); }
-        72% { transform: translateY(-96px); }
-        82% { transform: translateY(-96px); }
-        84% { transform: translateY(-112px); }
-        94% { transform: translateY(-112px); }
-        96% { transform: translateY(-128px); }
-        100% { transform: translateY(-128px); }
-    }
-
-    @keyframes ticker {
-        0% { transform: translateY(0); }
-        10% { transform: translateY(0); }
-        12% { transform: translateY(-16px); }
-        22% { transform: translateY(-16px); }
-        24% { transform: translateY(-32px); }
-        34% { transform: translateY(-32px); }
-        36% { transform: translateY(-48px); }
-        46% { transform: translateY(-48px); }
-        48% { transform: translateY(-64px); }
-        58% { transform: translateY(-64px); }
-        60% { transform: translateY(-80px); }
-        70% { transform: translateY(-80px); }
-        72% { transform: translateY(-96px); }
-        82% { transform: translateY(-96px); }
-        84% { transform: translateY(-112px); }
-        94% { transform: translateY(-112px); }
-        96% { transform: translateY(-128px); }
-        100% { transform: translateY(-128px); }
-    }
-
     .footer {
-        padding: 6px 10px;
-        font-size: 10px;
+        padding: 10px 30px;
     }
-
     .footer-content {
-        gap: 5px;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 0;
+    }
+    .footer-content span {
+        margin-right: 20px;
+    }
+    .footer-content .sales { text-align: left; }
+    .footer-content .support { text-align: center; margin-right: 0; }
+    .footer-content .privacy { text-align: right; }
+}
+
+/* Ensure single line on smaller screens */
+@media (max-width: 480px) {
+    .search-container {
+        flex-direction: row;
+        padding: 6px 24px 6px 12px;
+        max-width: 420px;
+    }
+    .dropdown {
+        width: 30%;
+        min-width: 90px; /* Reduced for mobile */
+    }
+    .dropdown button {
+        padding: 6px 6px 6px 10px; /* Adjusted for mobile */
+        font-size: clamp(12px, 2.5vw, 14px);
+    }
+    .search-container input {
+        padding: 6px 10px;
+        font-size: clamp(12px, 2.5vw, 14px);
+    }
+    .search-icon {
+        padding: 6px 0;
+        margin-right: -8px;
+        font-size: clamp(14px, 2.5vw, 16px);
     }
 }
