@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanvo - Landing Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <a href="/app/login">Login</a>
+        <a href="/app/signup">New account</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <!-- Logo -->
+        <div class="finanvo-logo"></div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="dropdown">
+                <button id="dropdownButton" onclick="toggleDropdown()">Company ▼</button>
+                <div class="dropdown-content" id="dropdownMenu">
+                    <a href="#" onclick="updateSearch('Company', 'Search for Company')">Company</a>
+                    <a href="#" onclick="updateSearch('Director', 'Search for Director')">Director</a>
+                    <a href="#" onclick="updateSearch('Trade', 'Search for GSTIN')">Trade</a>
+                    <a href="#" onclick="updateSearch('Startup', 'Search for Startup Company')">Startup Company</a>
+                </div>
+            </div>
+            <input type="text" id="searchInput" placeholder="Search for Company">
+            <button class="search-icon"></button>
+        </div>
+
+        <!-- Ticker -->
+        <div class="ticker-container">
+            <div class="ticker-wrapper">
+                <div class="ticker-static">Search across</div>
+                <div class="ticker">
+                    <div class="ticker-content">
+                        <div class="ticker-item">30L+ companies</div>
+                        <div class="ticker-item">4.2cr+ directors</div>
+                        <div class="ticker-item">1.5cr+ GST</div>
+                        <div class="ticker-item">11L+ Trademarks</div>
+                        <div class="ticker-item">1cr+ EPFO</div>
+                        <div class="ticker-item">3cr+ MSME</div>
+                        <div class="ticker-item">3L+ Startup</div>
+                        <div class="ticker-item">2L+ Legal Cases</div>
+                        <!-- Duplicate the first few items for a seamless loop -->
+                        <div class="ticker-item">30L+ companies</div>
+                        <div class="ticker-item">4.2cr+ directors</div>
+                        <div class="ticker-item">1.5cr+ GST</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-content">
+            <span class="sales">Sales: 📞 +91XXXXXXXXXX | ✉️ <a href="mailto:sales@finanvo.com">sales@finanvo.com</a></span>
+            <span class="support">Support: 📞 +91XXXXXXXXXX | ✉️ <a href="mailto:support@finanvo.com">support@finanvo.com</a></span>
+            <span class="privacy"><a href="#">Privacy Policy</a></span>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            document.querySelector(".dropdown").classList.toggle("active");
+        }
+
+        function updateSearch(option, placeholder) {
+            document.getElementById("dropdownButton").innerText = option + " ▼";
+            document.getElementById("searchInput").placeholder = placeholder;
+            document.querySelector(".dropdown").classList.remove("active"); // Hide dropdown after selection
+        }
+
+        // Close dropdown if clicked outside
+        document.addEventListener("click", function(event) {
+            if (!event.target.closest(".dropdown")) {
+                document.querySelector(".dropdown").classList.remove("active");
+            }
+        });
+    </script>
+</body>
+</html>
