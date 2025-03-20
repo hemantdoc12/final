@@ -5,13 +5,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', Arial, sans-serif; /* Modern font */
-    -webkit-font-smoothing: antialiased; /* Improve font rendering on Webkit browsers */
-    -moz-osx-font-smoothing: grayscale; /* Improve font rendering on Firefox macOS */
+    font-family: 'Inter', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    background-color: #f8f9fa; /* Light background for a clean look */
+    background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -42,17 +42,17 @@ body {
     border-radius: 20px;
     border: none;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    -webkit-transition: all 0.3s ease; /* Vendor prefix for Safari */
+    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Larger tap target for mobile */
     min-width: 80px;
     text-align: center;
+    line-height: 1.5; /* Ensure text is vertically centered */
 }
 
 .header a:hover {
     background: linear-gradient(135deg, #34a853 0%, #728539 100%);
-    -webkit-transform: translateY(-2px); /* Vendor prefix for Safari */
+    -webkit-transform: translateY(-2px);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -78,7 +78,7 @@ body {
     width: 350px;
     position: absolute;
     top: 30%;
-    -webkit-transform: translateY(-50%); /* Vendor prefix for Safari */
+    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
@@ -93,11 +93,11 @@ body {
     border-radius: 25px;
     padding: 8px 15px;
     box-shadow: 0 2px 10px rgba(32, 33, 36, 0.1);
-    -webkit-transition: box-shadow 0.2s ease; /* Vendor prefix for Safari */
+    -webkit-transition: box-shadow 0.2s ease;
     transition: box-shadow 0.2s ease;
     position: absolute;
     top: 43%;
-    -webkit-transform: translateY(-50%); /* Vendor prefix for Safari */
+    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     background-color: #ffffff;
     z-index: 500;
@@ -132,17 +132,17 @@ body {
     color: #ffffff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    -webkit-transition: all 0.3s ease; /* Vendor prefix for Safari */
+    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Larger tap target for mobile */
     min-width: 100px;
     text-align: center;
+    line-height: 1.5;
 }
 
 .dropdown button:hover {
     background: linear-gradient(135deg, #34a853 0%, #728539 100%);
-    -webkit-transform: translateY(-2px); /* Vendor prefix for Safari */
+    -webkit-transform: translateY(-2px);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -164,7 +164,7 @@ body {
     text-decoration: none;
     display: block;
     font-size: 14px;
-    -webkit-transition: background-color 0.3s ease; /* Vendor prefix for Safari */
+    -webkit-transition: background-color 0.3s ease;
     transition: background-color 0.3s ease;
 }
 
@@ -184,19 +184,18 @@ body {
     cursor: pointer;
     font-size: 18px;
     color: #333333;
-    -webkit-transition: all 0.3s ease; /* Vendor prefix for Safari */
+    -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    /* Larger tap target for mobile */
     padding: 10px;
 }
 
 .search-icon::before {
-    content: "\1F50D"; /* Unicode for magnifying glass emoji */
+    content: "\1F50D";
 }
 
 .search-icon:hover {
     color: #728539;
-    -webkit-transform: scale(1.1); /* Vendor prefix for Safari */
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
@@ -204,7 +203,7 @@ body {
 .ticker-container {
     position: absolute;
     top: 50%;
-    -webkit-transform: translateY(-50%); /* Vendor prefix for Safari */
+    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     width: 100%;
     max-width: 500px;
@@ -241,7 +240,7 @@ body {
     position: absolute;
     width: 100%;
     will-change: transform;
-    -webkit-animation: ticker 20s infinite linear; /* Vendor prefix for Safari */
+    -webkit-animation: ticker 20s infinite linear;
     animation: ticker 20s infinite linear;
 }
 
@@ -257,7 +256,7 @@ body {
     white-space: nowrap;
 }
 
-@-webkit-keyframes ticker { /* Vendor prefix for Safari */
+@-webkit-keyframes ticker {
     0% { transform: translateY(0); }
     10% { transform: translateY(0); }
     12% { transform: translateY(-25px); }
@@ -367,8 +366,8 @@ body {
     }
 
     .header a {
-        padding: 6px 12px;
-        min-width: 70px;
+        padding: 8px 12px; /* Slightly larger padding for better tap target */
+        min-width: 90px; /* Larger tap target */
         font-size: 12px;
     }
 
@@ -380,13 +379,13 @@ body {
     .finanvo-logo {
         height: 80px;
         width: 250px;
-        top: 25%;
+        top: 20%; /* Adjusted to avoid overlap */
     }
 
     .search-container {
         max-width: 90%;
         padding: 6px 10px;
-        top: 40%;
+        top: 35%; /* Adjusted to avoid overlap with logo */
     }
 
     .search-container input {
@@ -395,9 +394,9 @@ body {
     }
 
     .dropdown button {
-        padding: 6px 12px;
+        padding: 8px 12px; /* Larger tap target */
         font-size: 12px;
-        min-width: 90px;
+        min-width: 110px; /* Larger tap target */
     }
 
     .dropdown-content {
@@ -411,12 +410,12 @@ body {
 
     .search-icon {
         font-size: 16px;
-        padding: 8px;
+        padding: 12px; /* Larger tap target */
     }
 
     .ticker-container {
         max-width: 90%;
-        top: 55%;
+        top: 50%; /* Adjusted to avoid overlap with search bar */
     }
 
     .ticker-wrapper {
@@ -482,14 +481,14 @@ body {
     }
 
     .footer {
-        padding: 8px 20px;
+        padding: 10px 20px;
         font-size: 12px;
     }
 
     .footer-content {
         flex-direction: column;
         align-items: flex-start;
-        gap: 5px;
+        gap: 8px; /* Increased spacing for readability */
     }
 
     .footer-content .sales,
@@ -508,9 +507,9 @@ body {
     }
 
     .header a {
-        padding: 5px 10px;
-        min-width: 60px;
-        font-size: 10px;
+        padding: 8px 12px; /* Larger tap target */
+        min-width: 80px; /* Larger tap target */
+        font-size: 11px;
     }
 
     .main {
@@ -519,15 +518,15 @@ body {
     }
 
     .finanvo-logo {
-        height: 60px;
-        width: 200px;
-        top: 20%;
+        height: 50px; /* Smaller logo for smaller screens */
+        width: 180px;
+        top: 15%; /* Adjusted to avoid overlap */
     }
 
     .search-container {
         max-width: 100%;
         padding: 5px 8px;
-        top: 35%;
+        top: 30%; /* Adjusted to avoid overlap with logo */
     }
 
     .search-container input {
@@ -536,9 +535,9 @@ body {
     }
 
     .dropdown button {
-        padding: 5px 10px;
-        font-size: 10px;
-        min-width: 80px;
+        padding: 8px 12px; /* Larger tap target */
+        font-size: 11px;
+        min-width: 90px; /* Larger tap target */
     }
 
     .dropdown-content {
@@ -546,18 +545,18 @@ body {
     }
 
     .dropdown-content a {
-        font-size: 10px;
+        font-size: 11px;
         padding: 6px 10px;
     }
 
     .search-icon {
         font-size: 14px;
-        padding: 6px;
+        padding: 10px; /* Larger tap target */
     }
 
     .ticker-container {
         max-width: 100%;
-        top: 50%;
+        top: 45%; /* Adjusted to avoid overlap with search bar */
     }
 
     .ticker-wrapper {
@@ -566,7 +565,7 @@ body {
     }
 
     .ticker-static {
-        font-size: 12px;
+        font-size: 13px; /* Slightly larger for readability */
     }
 
     .ticker {
@@ -575,7 +574,7 @@ body {
     }
 
     .ticker-item {
-        font-size: 12px;
+        font-size: 13px; /* Slightly larger for readability */
         line-height: 18px;
         height: 18px;
     }
@@ -623,11 +622,140 @@ body {
     }
 
     .footer {
-        padding: 6px 15px;
+        padding: 8px 15px;
+        font-size: 11px; /* Slightly larger for readability */
+    }
+
+    .footer-content {
+        gap: 6px; /* Increased spacing for readability */
+    }
+}
+
+/* Extra Small Devices (max-width: 360px, e.g., iPhone 6s) */
+@media (max-width: 360px) {
+    .header {
+        padding: 6px 10px;
+    }
+
+    .header a {
+        padding: 6px 10px;
+        min-width: 70px;
+        font-size: 10px;
+    }
+
+    .main {
+        padding: 10px;
+        height: calc(100vh - 35px);
+    }
+
+    .finanvo-logo {
+        height: 40px;
+        width: 150px;
+        top: 12%;
+    }
+
+    .search-container {
+        padding: 4px 6px;
+        top: 25%;
+    }
+
+    .search-container input {
+        font-size: 11px;
+        padding: 5px;
+    }
+
+    .dropdown button {
+        padding: 6px 10px;
+        font-size: 10px;
+        min-width: 80px;
+    }
+
+    .dropdown-content {
+        min-width: 110px;
+    }
+
+    .dropdown-content a {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    .search-icon {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .ticker-container {
+        top: 40%;
+    }
+
+    .ticker-wrapper {
+        max-width: 180px;
+        padding: 2px 4px;
+    }
+
+    .ticker-static {
+        font-size: 12px;
+    }
+
+    .ticker {
+        width: 90px;
+        height: 16px;
+    }
+
+    .ticker-item {
+        font-size: 12px;
+        line-height: 16px;
+        height: 16px;
+    }
+
+    @-webkit-keyframes ticker {
+        0% { transform: translateY(0); }
+        10% { transform: translateY(0); }
+        12% { transform: translateY(-16px); }
+        22% { transform: translateY(-16px); }
+        24% { transform: translateY(-32px); }
+        34% { transform: translateY(-32px); }
+        36% { transform: translateY(-48px); }
+        46% { transform: translateY(-48px); }
+        48% { transform: translateY(-64px); }
+        58% { transform: translateY(-64px); }
+        60% { transform: translateY(-80px); }
+        70% { transform: translateY(-80px); }
+        72% { transform: translateY(-96px); }
+        82% { transform: translateY(-96px); }
+        84% { transform: translateY(-112px); }
+        94% { transform: translateY(-112px); }
+        96% { transform: translateY(-128px); }
+        100% { transform: translateY(-128px); }
+    }
+
+    @keyframes ticker {
+        0% { transform: translateY(0); }
+        10% { transform: translateY(0); }
+        12% { transform: translateY(-16px); }
+        22% { transform: translateY(-16px); }
+        24% { transform: translateY(-32px); }
+        34% { transform: translateY(-32px); }
+        36% { transform: translateY(-48px); }
+        46% { transform: translateY(-48px); }
+        48% { transform: translateY(-64px); }
+        58% { transform: translateY(-64px); }
+        60% { transform: translateY(-80px); }
+        70% { transform: translateY(-80px); }
+        72% { transform: translateY(-96px); }
+        82% { transform: translateY(-96px); }
+        84% { transform: translateY(-112px); }
+        94% { transform: translateY(-112px); }
+        96% { transform: translateY(-128px); }
+        100% { transform: translateY(-128px); }
+    }
+
+    .footer {
+        padding: 6px 10px;
         font-size: 10px;
     }
 
     .footer-content {
-        gap: 3px;
+        gap: 5px;
     }
 }
