@@ -1,0 +1,317 @@
+/* styles.css */
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif; /* Modern font */
+}
+
+body {
+    background-color: #f8f9fa; /* Light background for a clean look */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 30px; /* Reduced padding for a sleeker look */
+    font-size: 14px;
+    background-color: #ffffff; /* White background for header */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    position: fixed; /* Fixed header for better UX */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure header stays on top */
+}
+
+.header a {
+    margin-left: 15px; /* Reduced margin for tighter spacing */
+    color: #ffffff;
+    text-decoration: none;
+    background: linear-gradient(135deg, #728539 0%, #34a853 100%); /* Green gradient */
+    padding: 8px 16px; /* Reduced padding for a sleeker look */
+    border-radius: 20px; /* Slightly rounded corners */
+    border: none;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.header a:hover {
+    background: linear-gradient(135deg, #34a853 0%, #728539 100%); /* Reverse green gradient on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Main content */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px; /* Increased padding for better spacing */
+    height: calc(100vh - 60px); /* Adjusted height for header */
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Logo */
+.finanvo-logo {
+    background: url('finanvo-logo.png') no-repeat center;
+    background-size: contain;
+    height: 120px;
+    width: 350px;
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1)); /* Subtle shadow for logo */
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Reduced width for a more compact look */
+    border: 1px solid #dfe1e5;
+    border-radius: 25px; /* Slightly rounded corners */
+    padding: 8px 15px; /* Reduced padding for tighter spacing */
+    box-shadow: 0 2px 10px rgba(32, 33, 36, 0.1); /* Subtle shadow */
+    transition: box-shadow 0.2s ease;
+    position: absolute;
+    top: 43%;
+    transform: translateY(-50%);
+    background-color: #ffffff; /* White background for search bar */
+    z-index: 500; /* Ensure search bar is above ticker */
+}
+
+.search-container:hover {
+    box-shadow: 0 4px 15px rgba(32, 33, 36, 0.2); /* Enhanced shadow on hover */
+}
+
+.search-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px; /* Reduced padding for tighter spacing */
+    color: #333333; /* Darker text for better readability */
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    margin-right: 10px;
+    z-index: 600; /* Ensure dropdown is above everything */
+}
+
+.dropdown button {
+    background: linear-gradient(135deg, #728539 0%, #34a853 100%); /* Green gradient */
+    border: none;
+    border-radius: 20px; /* Slightly rounded corners */
+    padding: 8px 16px; /* Reduced padding for tighter spacing */
+    font-size: 14px;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.dropdown button:hover {
+    background: linear-gradient(135deg, #34a853 0%, #728539 100%); /* Reverse green gradient on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 700; /* Ensure dropdown content is above everything */
+    margin-top: 5px;
+    min-width: 160px; /* Ensure the dropdown has a minimum width */
+}
+
+.dropdown-content a {
+    color: #333333;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.dropdown.active .dropdown-content {
+    display: block; /* Show dropdown when active */
+}
+
+/* Search Icon */
+.search-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333333; /* Dark gray for the icon */
+    transition: all 0.3s ease;
+}
+
+.search-icon::before {
+    content: "\1F50D"; /* Unicode for magnifying glass emoji */
+}
+
+.search-icon:hover {
+    color: #728539; /* Green on hover to match theme */
+    transform: scale(1.1); /* Slight scale increase on hover */
+}
+
+/* Ticker Container */
+.ticker-container {
+    position: absolute;
+    top: 50%; /* As per your adjustment */
+    transform: translateY(-50%);
+    width: 100%;
+    max-width: 500px; /* Match search bar width */
+    text-align: center;
+    z-index: 400; /* Ensure ticker is below search bar and dropdown */
+}
+
+.ticker-wrapper {
+    display: inline-flex; /* Use inline-flex to align static and ticker in one line */
+    align-items: center;
+    background-color: #f1f3f4; /* Light gray background to blend them */
+    border-radius: 15px; /* Slightly rounded corners */
+    padding: 4px 8px; /* Reduced padding to minimize empty space */
+    max-width: 300px; /* Shorten the background width */
+}
+
+.ticker-static {
+    color: #333333;
+    font-size: 16px; /* Match the original font size */
+    font-weight: 500; /* Match the original weight */
+    margin-right: 0.5em; /* Equivalent to 2 spaces (approx) */
+}
+
+.ticker {
+    display: inline-block; /* Inline-block to align with static text */
+    width: 150px; /* Reduced width to fit ticker items snugly */
+    height: 25px; /* Fixed height for ticker */
+    overflow: hidden;
+    position: relative;
+    text-align: left; /* Ensure consistent alignment */
+}
+
+.ticker-content {
+    position: absolute;
+    width: 100%;
+    will-change: transform; /* Optimize animation performance */
+    animation: ticker 20s infinite linear; /* Adjust timing as needed */
+}
+
+.ticker-item {
+    display: block; /* Ensure each item takes full width */
+    padding: 0; /* Remove padding to avoid shifts */
+    margin: 0; /* Remove margin to avoid shifts */
+    color: #728539; /* Match button color (green) */
+    font-size: 16px; /* Match the static text size */
+    font-weight: 500; /* Match the static text weight */
+    line-height: 25px; /* Match the height of the ticker for consistent alignment */
+    height: 25px; /* Explicitly set height to match container */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+@keyframes ticker {
+    0% { transform: translateY(0); }
+    10% { transform: translateY(0); }
+    12% { transform: translateY(-25px); }
+    22% { transform: translateY(-25px); }
+    24% { transform: translateY(-50px); }
+    34% { transform: translateY(-50px); }
+    36% { transform: translateY(-75px); }
+    46% { transform: translateY(-75px); }
+    48% { transform: translateY(-100px); }
+    58% { transform: translateY(-100px); }
+    60% { transform: translateY(-125px); }
+    70% { transform: translateY(-125px); }
+    72% { transform: translateY(-150px); }
+    82% { transform: translateY(-150px); }
+    84% { transform: translateY(-175px); }
+    94% { transform: translateY(-175px); }
+    96% { transform: translateY(-200px); }
+    100% { transform: translateY(-200px); }
+}
+
+/* Footer */
+.footer {
+    background-color: #ffffff; /* White background for footer */
+    padding: 10px 30px; /* Reduced padding for a sleeker look */
+    font-size: 14px;
+    color: #70757a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically center items */
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for footer */
+}
+
+.footer a {
+    color: #70757a;
+    text-decoration: none;
+    margin: 0 10px; /* Reduced margin for tighter spacing */
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically center items */
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+}
+
+.footer-content span {
+    margin-right: 20px; /* Reduced margin for tighter spacing */
+}
+
+.footer-content .sales,
+.footer-content .support,
+.footer-content .privacy {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-content .sales {
+    text-align: left;
+}
+
+.footer-content .support {
+    margin-right: 0; /* Remove negative margin to fix alignment */
+}
+
+.footer-content .privacy {
+    text-align: right;
+}
