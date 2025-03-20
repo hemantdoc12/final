@@ -6,6 +6,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', Arial, sans-serif; /* Modern font */
+    -webkit-font-smoothing: antialiased; /* Improve font rendering on Webkit browsers */
+    -moz-osx-font-smoothing: grayscale; /* Improve font rendering on Firefox macOS */
 }
 
 body {
@@ -20,34 +22,39 @@ body {
 .header {
     display: flex;
     justify-content: flex-end;
-    padding: 15px 30px; /* Reduced padding for a sleeker look */
+    padding: 15px 30px;
     font-size: 14px;
-    background-color: #ffffff; /* White background for header */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
-    position: fixed; /* Fixed header for better UX */
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Ensure header stays on top */
+    z-index: 1000;
 }
 
 .header a {
-    margin-left: 15px; /* Reduced margin for tighter spacing */
+    margin-left: 15px;
     color: #ffffff;
     text-decoration: none;
-    background: linear-gradient(135deg, #728539 0%, #34a853 100%); /* Green gradient */
-    padding: 8px 16px; /* Reduced padding for a sleeker look */
-    border-radius: 20px; /* Slightly rounded corners */
+    background: linear-gradient(135deg, #728539 0%, #34a853 100%);
+    padding: 8px 16px;
+    border-radius: 20px;
     border: none;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 0.3s ease; /* Vendor prefix for Safari */
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Larger tap target for mobile */
+    min-width: 80px;
+    text-align: center;
 }
 
 .header a:hover {
-    background: linear-gradient(135deg, #34a853 0%, #728539 100%); /* Reverse green gradient on hover */
+    background: linear-gradient(135deg, #34a853 0%, #728539 100%);
+    -webkit-transform: translateY(-2px); /* Vendor prefix for Safari */
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Main content */
@@ -57,8 +64,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px; /* Increased padding for better spacing */
-    height: calc(100vh - 60px); /* Adjusted height for header */
+    padding: 40px;
+    height: calc(100vh - 60px);
     box-sizing: border-box;
     position: relative;
 }
@@ -71,8 +78,9 @@ body {
     width: 350px;
     position: absolute;
     top: 30%;
+    -webkit-transform: translateY(-50%); /* Vendor prefix for Safari */
     transform: translateY(-50%);
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1)); /* Subtle shadow for logo */
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 /* Search Bar */
@@ -80,21 +88,23 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 500px; /* Reduced width for a more compact look */
+    max-width: 500px;
     border: 1px solid #dfe1e5;
-    border-radius: 25px; /* Slightly rounded corners */
-    padding: 8px 15px; /* Reduced padding for tighter spacing */
-    box-shadow: 0 2px 10px rgba(32, 33, 36, 0.1); /* Subtle shadow */
+    border-radius: 25px;
+    padding: 8px 15px;
+    box-shadow: 0 2px 10px rgba(32, 33, 36, 0.1);
+    -webkit-transition: box-shadow 0.2s ease; /* Vendor prefix for Safari */
     transition: box-shadow 0.2s ease;
     position: absolute;
     top: 43%;
+    -webkit-transform: translateY(-50%); /* Vendor prefix for Safari */
     transform: translateY(-50%);
-    background-color: #ffffff; /* White background for search bar */
-    z-index: 500; /* Ensure search bar is above ticker */
+    background-color: #ffffff;
+    z-index: 500;
 }
 
 .search-container:hover {
-    box-shadow: 0 4px 15px rgba(32, 33, 36, 0.2); /* Enhanced shadow on hover */
+    box-shadow: 0 4px 15px rgba(32, 33, 36, 0.2);
 }
 
 .search-container input {
@@ -102,45 +112,50 @@ body {
     border: none;
     outline: none;
     font-size: 16px;
-    padding: 10px; /* Reduced padding for tighter spacing */
-    color: #333333; /* Darker text for better readability */
+    padding: 10px;
+    color: #333333;
 }
 
 /* Dropdown */
 .dropdown {
     position: relative;
     margin-right: 10px;
-    z-index: 600; /* Ensure dropdown is above everything */
+    z-index: 600;
 }
 
 .dropdown button {
-    background: linear-gradient(135deg, #728539 0%, #34a853 100%); /* Green gradient */
+    background: linear-gradient(135deg, #728539 0%, #34a853 100%);
     border: none;
-    border-radius: 20px; /* Slightly rounded corners */
-    padding: 8px 16px; /* Reduced padding for tighter spacing */
+    border-radius: 20px;
+    padding: 8px 16px;
     font-size: 14px;
     color: #ffffff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    -webkit-transition: all 0.3s ease; /* Vendor prefix for Safari */
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Larger tap target for mobile */
+    min-width: 100px;
+    text-align: center;
 }
 
 .dropdown button:hover {
-    background: linear-gradient(135deg, #34a853 0%, #728539 100%); /* Reverse green gradient on hover */
+    background: linear-gradient(135deg, #34a853 0%, #728539 100%);
+    -webkit-transform: translateY(-2px); /* Vendor prefix for Safari */
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content {
-    display: none; /* Hidden by default */
+    display: none;
     position: absolute;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 700; /* Ensure dropdown content is above everything */
+    z-index: 700;
     margin-top: 5px;
-    min-width: 160px; /* Ensure the dropdown has a minimum width */
+    min-width: 160px;
 }
 
 .dropdown-content a {
@@ -149,6 +164,7 @@ body {
     text-decoration: none;
     display: block;
     font-size: 14px;
+    -webkit-transition: background-color 0.3s ease; /* Vendor prefix for Safari */
     transition: background-color 0.3s ease;
 }
 
@@ -158,7 +174,7 @@ body {
 }
 
 .dropdown.active .dropdown-content {
-    display: block; /* Show dropdown when active */
+    display: block;
 }
 
 /* Search Icon */
@@ -167,8 +183,11 @@ body {
     border: none;
     cursor: pointer;
     font-size: 18px;
-    color: #333333; /* Dark gray for the icon */
+    color: #333333;
+    -webkit-transition: all 0.3s ease; /* Vendor prefix for Safari */
     transition: all 0.3s ease;
+    /* Larger tap target for mobile */
+    padding: 10px;
 }
 
 .search-icon::before {
@@ -176,63 +195,87 @@ body {
 }
 
 .search-icon:hover {
-    color: #728539; /* Green on hover to match theme */
-    transform: scale(1.1); /* Slight scale increase on hover */
+    color: #728539;
+    -webkit-transform: scale(1.1); /* Vendor prefix for Safari */
+    transform: scale(1.1);
 }
 
 /* Ticker Container */
 .ticker-container {
     position: absolute;
-    top: 50%; /* As per your adjustment */
+    top: 50%;
+    -webkit-transform: translateY(-50%); /* Vendor prefix for Safari */
     transform: translateY(-50%);
     width: 100%;
-    max-width: 500px; /* Match search bar width */
+    max-width: 500px;
     text-align: center;
-    z-index: 400; /* Ensure ticker is below search bar and dropdown */
+    z-index: 400;
 }
 
 .ticker-wrapper {
-    display: inline-flex; /* Use inline-flex to align static and ticker in one line */
+    display: inline-flex;
     align-items: center;
-    background-color: #f1f3f4; /* Light gray background to blend them */
-    border-radius: 15px; /* Slightly rounded corners */
-    padding: 4px 8px; /* Reduced padding to minimize empty space */
-    max-width: 300px; /* Shorten the background width */
+    background-color: #f1f3f4;
+    border-radius: 15px;
+    padding: 4px 8px;
+    max-width: 300px;
 }
 
 .ticker-static {
     color: #333333;
-    font-size: 16px; /* Match the original font size */
-    font-weight: 500; /* Match the original weight */
-    margin-right: 0.5em; /* Equivalent to 2 spaces (approx) */
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 0.5em;
 }
 
 .ticker {
-    display: inline-block; /* Inline-block to align with static text */
-    width: 150px; /* Reduced width to fit ticker items snugly */
-    height: 25px; /* Fixed height for ticker */
+    display: inline-block;
+    width: 150px;
+    height: 25px;
     overflow: hidden;
     position: relative;
-    text-align: left; /* Ensure consistent alignment */
+    text-align: left;
 }
 
 .ticker-content {
     position: absolute;
     width: 100%;
-    will-change: transform; /* Optimize animation performance */
-    animation: ticker 20s infinite linear; /* Adjust timing as needed */
+    will-change: transform;
+    -webkit-animation: ticker 20s infinite linear; /* Vendor prefix for Safari */
+    animation: ticker 20s infinite linear;
 }
 
 .ticker-item {
-    display: block; /* Ensure each item takes full width */
-    padding: 0; /* Remove padding to avoid shifts */
-    margin: 0; /* Remove margin to avoid shifts */
-    color: #728539; /* Match button color (green) */
-    font-size: 16px; /* Match the static text size */
-    font-weight: 500; /* Match the static text weight */
-    line-height: 25px; /* Match the height of the ticker for consistent alignment */
-    height: 25px; /* Explicitly set height to match container */
-    white-space: nowrap; /* Prevent text wrapping */
+    display: block;
+    padding: 0;
+    margin: 0;
+    color: #728539;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25px;
+    height: 25px;
+    white-space: nowrap;
+}
+
+@-webkit-keyframes ticker { /* Vendor prefix for Safari */
+    0% { transform: translateY(0); }
+    10% { transform: translateY(0); }
+    12% { transform: translateY(-25px); }
+    22% { transform: translateY(-25px); }
+    24% { transform: translateY(-50px); }
+    34% { transform: translateY(-50px); }
+    36% { transform: translateY(-75px); }
+    46% { transform: translateY(-75px); }
+    48% { transform: translateY(-100px); }
+    58% { transform: translateY(-100px); }
+    60% { transform: translateY(-125px); }
+    70% { transform: translateY(-125px); }
+    72% { transform: translateY(-150px); }
+    82% { transform: translateY(-150px); }
+    84% { transform: translateY(-175px); }
+    94% { transform: translateY(-175px); }
+    96% { transform: translateY(-200px); }
+    100% { transform: translateY(-200px); }
 }
 
 @keyframes ticker {
@@ -258,26 +301,26 @@ body {
 
 /* Footer */
 .footer {
-    background-color: #ffffff; /* White background for footer */
-    padding: 10px 30px; /* Reduced padding for a sleeker look */
+    background-color: #ffffff;
+    padding: 10px 30px;
     font-size: 14px;
     color: #70757a;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Vertically center items */
+    align-items: center;
     width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     white-space: nowrap;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for footer */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .footer a {
     color: #70757a;
     text-decoration: none;
-    margin: 0 10px; /* Reduced margin for tighter spacing */
+    margin: 0 10px;
 }
 
 .footer a:hover {
@@ -287,14 +330,14 @@ body {
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Vertically center items */
+    align-items: center;
     width: 100%;
     max-width: none;
     margin: 0 auto;
 }
 
 .footer-content span {
-    margin-right: 20px; /* Reduced margin for tighter spacing */
+    margin-right: 20px;
 }
 
 .footer-content .sales,
@@ -309,9 +352,282 @@ body {
 }
 
 .footer-content .support {
-    margin-right: 0; /* Remove negative margin to fix alignment */
+    margin-right: 0;
 }
 
 .footer-content .privacy {
     text-align: right;
+}
+
+/* Responsive Design: Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .header a {
+        padding: 6px 12px;
+        min-width: 70px;
+        font-size: 12px;
+    }
+
+    .main {
+        padding: 20px;
+        height: calc(100vh - 50px);
+    }
+
+    .finanvo-logo {
+        height: 80px;
+        width: 250px;
+        top: 25%;
+    }
+
+    .search-container {
+        max-width: 90%;
+        padding: 6px 10px;
+        top: 40%;
+    }
+
+    .search-container input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .dropdown button {
+        padding: 6px 12px;
+        font-size: 12px;
+        min-width: 90px;
+    }
+
+    .dropdown-content {
+        min-width: 140px;
+    }
+
+    .dropdown-content a {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .search-icon {
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .ticker-container {
+        max-width: 90%;
+        top: 55%;
+    }
+
+    .ticker-wrapper {
+        max-width: 250px;
+        padding: 3px 6px;
+    }
+
+    .ticker-static {
+        font-size: 14px;
+    }
+
+    .ticker {
+        width: 120px;
+        height: 20px;
+    }
+
+    .ticker-item {
+        font-size: 14px;
+        line-height: 20px;
+        height: 20px;
+    }
+
+    @-webkit-keyframes ticker {
+        0% { transform: translateY(0); }
+        10% { transform: translateY(0); }
+        12% { transform: translateY(-20px); }
+        22% { transform: translateY(-20px); }
+        24% { transform: translateY(-40px); }
+        34% { transform: translateY(-40px); }
+        36% { transform: translateY(-60px); }
+        46% { transform: translateY(-60px); }
+        48% { transform: translateY(-80px); }
+        58% { transform: translateY(-80px); }
+        60% { transform: translateY(-100px); }
+        70% { transform: translateY(-100px); }
+        72% { transform: translateY(-120px); }
+        82% { transform: translateY(-120px); }
+        84% { transform: translateY(-140px); }
+        94% { transform: translateY(-140px); }
+        96% { transform: translateY(-160px); }
+        100% { transform: translateY(-160px); }
+    }
+
+    @keyframes ticker {
+        0% { transform: translateY(0); }
+        10% { transform: translateY(0); }
+        12% { transform: translateY(-20px); }
+        22% { transform: translateY(-20px); }
+        24% { transform: translateY(-40px); }
+        34% { transform: translateY(-40px); }
+        36% { transform: translateY(-60px); }
+        46% { transform: translateY(-60px); }
+        48% { transform: translateY(-80px); }
+        58% { transform: translateY(-80px); }
+        60% { transform: translateY(-100px); }
+        70% { transform: translateY(-100px); }
+        72% { transform: translateY(-120px); }
+        82% { transform: translateY(-120px); }
+        84% { transform: translateY(-140px); }
+        94% { transform: translateY(-140px); }
+        96% { transform: translateY(-160px); }
+        100% { transform: translateY(-160px); }
+    }
+
+    .footer {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .footer-content .sales,
+    .footer-content .support,
+    .footer-content .privacy {
+        text-align: left;
+        flex: none;
+    }
+}
+
+/* Responsive Design: Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .header {
+        padding: 8px 15px;
+        font-size: 10px;
+    }
+
+    .header a {
+        padding: 5px 10px;
+        min-width: 60px;
+        font-size: 10px;
+    }
+
+    .main {
+        padding: 15px;
+        height: calc(100vh - 40px);
+    }
+
+    .finanvo-logo {
+        height: 60px;
+        width: 200px;
+        top: 20%;
+    }
+
+    .search-container {
+        max-width: 100%;
+        padding: 5px 8px;
+        top: 35%;
+    }
+
+    .search-container input {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .dropdown button {
+        padding: 5px 10px;
+        font-size: 10px;
+        min-width: 80px;
+    }
+
+    .dropdown-content {
+        min-width: 120px;
+    }
+
+    .dropdown-content a {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    .search-icon {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .ticker-container {
+        max-width: 100%;
+        top: 50%;
+    }
+
+    .ticker-wrapper {
+        max-width: 200px;
+        padding: 2px 5px;
+    }
+
+    .ticker-static {
+        font-size: 12px;
+    }
+
+    .ticker {
+        width: 100px;
+        height: 18px;
+    }
+
+    .ticker-item {
+        font-size: 12px;
+        line-height: 18px;
+        height: 18px;
+    }
+
+    @-webkit-keyframes ticker {
+        0% { transform: translateY(0); }
+        10% { transform: translateY(0); }
+        12% { transform: translateY(-18px); }
+        22% { transform: translateY(-18px); }
+        24% { transform: translateY(-36px); }
+        34% { transform: translateY(-36px); }
+        36% { transform: translateY(-54px); }
+        46% { transform: translateY(-54px); }
+        48% { transform: translateY(-72px); }
+        58% { transform: translateY(-72px); }
+        60% { transform: translateY(-90px); }
+        70% { transform: translateY(-90px); }
+        72% { transform: translateY(-108px); }
+        82% { transform: translateY(-108px); }
+        84% { transform: translateY(-126px); }
+        94% { transform: translateY(-126px); }
+        96% { transform: translateY(-144px); }
+        100% { transform: translateY(-144px); }
+    }
+
+    @keyframes ticker {
+        0% { transform: translateY(0); }
+        10% { transform: translateY(0); }
+        12% { transform: translateY(-18px); }
+        22% { transform: translateY(-18px); }
+        24% { transform: translateY(-36px); }
+        34% { transform: translateY(-36px); }
+        36% { transform: translateY(-54px); }
+        46% { transform: translateY(-54px); }
+        48% { transform: translateY(-72px); }
+        58% { transform: translateY(-72px); }
+        60% { transform: translateY(-90px); }
+        70% { transform: translateY(-90px); }
+        72% { transform: translateY(-108px); }
+        82% { transform: translateY(-108px); }
+        84% { transform: translateY(-126px); }
+        94% { transform: translateY(-126px); }
+        96% { transform: translateY(-144px); }
+        100% { transform: translateY(-144px); }
+    }
+
+    .footer {
+        padding: 6px 15px;
+        font-size: 10px;
+    }
+
+    .footer-content {
+        gap: 3px;
+    }
 }
