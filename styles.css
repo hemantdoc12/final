@@ -47,7 +47,7 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     min-width: 80px;
     text-align: center;
-    line-height: 1.5; /* Ensure text is vertically centered */
+    line-height: 1.5;
 }
 
 .header a:hover {
@@ -366,8 +366,8 @@ body {
     }
 
     .header a {
-        padding: 8px 12px; /* Slightly larger padding for better tap target */
-        min-width: 90px; /* Larger tap target */
+        padding: 8px 12px;
+        min-width: 90px;
         font-size: 12px;
     }
 
@@ -379,13 +379,13 @@ body {
     .finanvo-logo {
         height: 80px;
         width: 250px;
-        top: 20%; /* Adjusted to avoid overlap */
+        top: 15%; /* Adjusted for better spacing */
     }
 
     .search-container {
         max-width: 90%;
         padding: 6px 10px;
-        top: 35%; /* Adjusted to avoid overlap with logo */
+        top: 35%; /* Adjusted for better spacing */
     }
 
     .search-container input {
@@ -394,9 +394,9 @@ body {
     }
 
     .dropdown button {
-        padding: 8px 12px; /* Larger tap target */
+        padding: 8px 12px;
         font-size: 12px;
-        min-width: 110px; /* Larger tap target */
+        min-width: 110px;
     }
 
     .dropdown-content {
@@ -410,12 +410,12 @@ body {
 
     .search-icon {
         font-size: 16px;
-        padding: 12px; /* Larger tap target */
+        padding: 12px;
     }
 
     .ticker-container {
         max-width: 90%;
-        top: 50%; /* Adjusted to avoid overlap with search bar */
+        top: 55%; /* Adjusted for better spacing */
     }
 
     .ticker-wrapper {
@@ -488,7 +488,7 @@ body {
     .footer-content {
         flex-direction: column;
         align-items: flex-start;
-        gap: 8px; /* Increased spacing for readability */
+        gap: 8px;
     }
 
     .footer-content .sales,
@@ -507,8 +507,8 @@ body {
     }
 
     .header a {
-        padding: 8px 12px; /* Larger tap target */
-        min-width: 80px; /* Larger tap target */
+        padding: 8px 12px;
+        min-width: 80px;
         font-size: 11px;
     }
 
@@ -518,15 +518,15 @@ body {
     }
 
     .finanvo-logo {
-        height: 50px; /* Smaller logo for smaller screens */
+        height: 50px;
         width: 180px;
-        top: 15%; /* Adjusted to avoid overlap */
+        top: 10%; /* Adjusted for better spacing */
     }
 
     .search-container {
         max-width: 100%;
         padding: 5px 8px;
-        top: 30%; /* Adjusted to avoid overlap with logo */
+        top: 25%; /* Adjusted for better spacing */
     }
 
     .search-container input {
@@ -535,9 +535,9 @@ body {
     }
 
     .dropdown button {
-        padding: 8px 12px; /* Larger tap target */
+        padding: 8px 12px;
         font-size: 11px;
-        min-width: 90px; /* Larger tap target */
+        min-width: 90px;
     }
 
     .dropdown-content {
@@ -551,12 +551,12 @@ body {
 
     .search-icon {
         font-size: 14px;
-        padding: 10px; /* Larger tap target */
+        padding: 10px;
     }
 
     .ticker-container {
         max-width: 100%;
-        top: 45%; /* Adjusted to avoid overlap with search bar */
+        top: 40%; /* Adjusted for better spacing */
     }
 
     .ticker-wrapper {
@@ -565,7 +565,7 @@ body {
     }
 
     .ticker-static {
-        font-size: 13px; /* Slightly larger for readability */
+        font-size: 13px;
     }
 
     .ticker {
@@ -574,7 +574,7 @@ body {
     }
 
     .ticker-item {
-        font-size: 13px; /* Slightly larger for readability */
+        font-size: 13px;
         line-height: 18px;
         height: 18px;
     }
@@ -623,11 +623,11 @@ body {
 
     .footer {
         padding: 8px 15px;
-        font-size: 11px; /* Slightly larger for readability */
+        font-size: 11px;
     }
 
     .footer-content {
-        gap: 6px; /* Increased spacing for readability */
+        gap: 6px;
     }
 }
 
@@ -651,12 +651,12 @@ body {
     .finanvo-logo {
         height: 40px;
         width: 150px;
-        top: 12%;
+        top: 8%; /* Adjusted for better spacing */
     }
 
     .search-container {
         padding: 4px 6px;
-        top: 25%;
+        top: 20%; /* Adjusted for better spacing */
     }
 
     .search-container input {
@@ -685,7 +685,7 @@ body {
     }
 
     .ticker-container {
-        top: 40%;
+        top: 35%; /* Adjusted for better spacing */
     }
 
     .ticker-wrapper {
